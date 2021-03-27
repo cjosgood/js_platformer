@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="assets/lava.png">
+        <title>Hot Heights</title>
+    </head>
+
+    <body>
+        <canvas id='viewport' width="1280" height="544" style='border: 7px dashed red'></canvas>
+        
+        <p> The game will end in <span id="countdowntimer">90 </span> seconds.</p>
+
+        <script type="text/javascript">
+            var timeleft = 90;
+            var timer = setInterval(function(){
+            timeleft--;
+            document.getElementById("countdowntimer").textContent = timeleft;
+            if(timeleft <= -1)
+                document.location.reload();
+            },1000);
+        </script>
+
+        <script src='scripts/worldData.js'></script>
+        <script src='scripts/World.js'></script>
+        <script src='scripts/GameObject.js'></script>
+        <script src='scripts/Block.js'></script>
+        <script src='scripts/LavaHazard.js'></script>
+        <script src='scripts/SpikeHazard.js'></script>
+        <script src='scripts/Exit.js'></script>
+        <script src='scripts/Physics.js'></script>
+        <script src='scripts/Player.js'></script>
+        <script src='scripts/Scene.js'></script>
+        <script src='scripts/Controller.js'></script>
+        <script src='scripts/view.js'></script>
+        <script src ='scripts/Countdown.js'></script>
+        <script src='scripts/Game.js'></script>
+
+        <script>
+            window.addEventListener('load', Game.main);
+        </script>
+    </body>
+</html>
